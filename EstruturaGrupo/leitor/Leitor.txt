@@ -1,0 +1,36 @@
+package leitor;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Leitor {
+    public static void main(String[] args) {
+        String arquivo = "Pedido.txt";
+
+        try (BufferedReader br = new BufferedReader(new FileReader(arquivo))) {
+            String linha;
+
+            while ((linha = br.readLine()) != null) {
+                // Dividir a linha em partes usando ";" como delimitador
+                String[] partes = linha.split(";");
+
+                // Verificar se a linha contém os elementos desejados
+                if (partes.length >= 3) {
+                    String codigoNumerico = partes[0];
+                    String data = partes[3];
+                    String pais = partes[9];
+
+                    // Imprimir os elementos desejados
+                    System.out.println("Código: " + codigoNumerico);
+                    System.out.println("Data: " + data);
+                    System.out.println("País: " + pais);
+
+                    // Adicione aqui o código para processar ou armazenar os elementos conforme necessário
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
