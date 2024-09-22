@@ -11,7 +11,7 @@ public class LeitorDoArquivo {
 
     public static ArrayList<RegistradorDeProdutos> lerProdutos() {
 
-        String caminhoArquivo = "Produto.txt";
+        String caminhoArquivo = System.getProperty("user.dir") + "/EstruturaDeDados/Produto.txt";
         ArrayList<RegistradorDeProdutos> listaDeProdutos = new ArrayList<>();
 
         try {

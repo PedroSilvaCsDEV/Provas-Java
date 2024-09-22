@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class Leitor {
     public static void main(String[] args) {
-        String arquivo = "Pedido.txt";
+        String arquivo = System.getProperty("user.dir") + "/EstruturaGrupo/Pedido.txt";
 
         try (BufferedReader br = new BufferedReader(new FileReader(arquivo))) {
             String linha;
